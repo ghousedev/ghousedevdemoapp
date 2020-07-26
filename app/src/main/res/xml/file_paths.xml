@@ -1,0 +1,5 @@
+<paths>
+    <external-files-path
+        name="doc_folder"
+        path="Documents/" />
+</paths>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_login">
+
+    <fragment
+        android:id="@+id/nav_login"
+        android:name="dev.ghouse.ghousedevdemoapp.ui.login.LoginFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_nav_login_to_nav_main"
+            app:destination="@id/nav_main"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_main"
+        android:name="dev.ghouse.ghousedevdemoapp.ui.main.MainFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_nav_main_to_nav_formdemo"
+            app:destination="@id/nav_formdemo"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_nav_main_to_nav_viewSavedFragment"
+            app:destination="@id/nav_viewSavedFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_formdemo"
+        android:name="dev.ghouse.ghousedevdemoapp.ui.formdemo.FormDemoFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_formdemo">
+        <action
+            android:id="@+id/action_nav_formdemo_to_nav_save_document_dialog"
+            app:destination="@id/nav_save_document_dialog"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_nav_formdemo_to_nav_preview_pdf"
+            app:destination="@id/nav_preview_pdf"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/nav_save_document_dialog"
+        android:name="dev.ghouse.ghousedevdemoapp.ui.dialogs.SaveDocumentDialog" />
+
+    <fragment
+        android:id="@+id/nav_preview_pdf"
+        android:name="dev.ghouse.ghousedevdemoapp.ui.preview.PreviewPdfFragment"
+        android:label="Preview Document"
+        tools:layout="@layout/fragment_pdf_preview" />
+    <fragment
+        android:id="@+id/nav_viewSavedFragment"
+        android:name="dev.ghouse.ghousedevdemoapp.ui.viewsaveddata.ViewSavedFragment"
+        android:label="view_saved_fragment"
+        tools:layout="@layout/view_saved_fragment" />
+</navigation>
